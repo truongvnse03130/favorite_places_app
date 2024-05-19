@@ -4,7 +4,12 @@ import 'dart:io';
 const uuid = Uuid();
 
 class Place {
-  Place(this.image, this.location, {required this.title}) : id = uuid.v4();
+  Place({
+    required this.title,
+    required this.image,
+    required this.location,
+    String? id,
+  }) : id = id ?? uuid.v4();
 
   final String id;
   final String title;
